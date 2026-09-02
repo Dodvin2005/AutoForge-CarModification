@@ -23,9 +23,7 @@ import {
 } from "../Services/Api";
 
 function Orders() {
-  // =====================================================
   // STATES
-  // =====================================================
 
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -35,9 +33,7 @@ function Orders() {
 
   const [selectedOrder, setSelectedOrder] = useState(null);
 
-  // =====================================================
   // GET ORDERS
-  // =====================================================
 
   const getOrders = async () => {
     try {
@@ -77,9 +73,7 @@ function Orders() {
     getOrders();
   }, []);
 
-  // =====================================================
   // DELETE ORDER
-  // =====================================================
 
   const handleDeleteOrder = async (id) => {
     const confirmDelete = window.confirm(
@@ -110,9 +104,7 @@ function Orders() {
     }
   };
 
-  // =====================================================
   // STATUS FILTER
-  // =====================================================
 
   const filteredOrders =
     selectedStatus === "All"
@@ -123,9 +115,7 @@ function Orders() {
             selectedStatus.toLowerCase()
         );
 
-  // =====================================================
   // STATUS COUNT
-  // =====================================================
 
   const getStatusCount = (status) => {
     if (status === "All") {
@@ -139,9 +129,7 @@ function Orders() {
     ).length;
   };
 
-  // =====================================================
   // STATUS BADGE
-  // =====================================================
 
   const getStatusBadge = (status) => {
     switch (
@@ -196,9 +184,7 @@ function Orders() {
     }
   };
 
-  // =====================================================
   // PAYMENT STATUS BADGE
-  // =====================================================
 
   const getPaymentStatusBadge = (status) => {
     if (
@@ -232,9 +218,7 @@ function Orders() {
     );
   };
 
-  // =====================================================
   // FORMAT DATE
-  // =====================================================
 
   const formatDate = (date) => {
     if (!date) {
@@ -257,9 +241,7 @@ function Orders() {
     );
   };
 
-  // =====================================================
   // TOTAL ITEMS
-  // =====================================================
 
   const getTotalItems = (items) => {
     if (!Array.isArray(items)) {
@@ -273,9 +255,7 @@ function Orders() {
     );
   };
 
-  // =====================================================
   // LOADING
-  // =====================================================
 
   if (loading) {
     return (
@@ -299,9 +279,7 @@ function Orders() {
     );
   }
 
-  // =====================================================
   // ERROR
-  // =====================================================
 
   if (error) {
     return (
@@ -331,9 +309,7 @@ function Orders() {
     );
   }
 
-  // =====================================================
   // EMPTY ORDERS
-  // =====================================================
 
   if (orders.length === 0) {
     return (
@@ -371,18 +347,14 @@ function Orders() {
     );
   }
 
-  // =====================================================
   // RETURN
-  // =====================================================
 
   return (
     <div className="bg-light min-vh-100 py-5">
 
       <div className="container">
 
-        {/* =================================================
-            HEADER
-        ================================================= */}
+{/* HEADER */}
 
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
 
@@ -405,9 +377,7 @@ function Orders() {
 
         </div>
 
-        {/* =================================================
-            SUMMARY CARDS
-        ================================================= */}
+{/* SUMMARY CARDS */}
 
         <div className="row g-3 mb-4">
 
@@ -525,9 +495,7 @@ function Orders() {
 
         </div>
 
-        {/* =================================================
-            FILTERS
-        ================================================= */}
+{/* FILTERS */}
 
         <div className="card border-0 shadow-sm rounded-4 mb-4">
 
@@ -576,9 +544,7 @@ function Orders() {
 
         </div>
 
-        {/* =================================================
-            NO FILTER RESULTS
-        ================================================= */}
+{/* NO FILTER RESULTS */}
 
         {filteredOrders.length === 0 && (
           <div className="card border-0 shadow-sm rounded-4">
@@ -603,9 +569,7 @@ function Orders() {
           </div>
         )}
 
-        {/* =================================================
-            ORDERS
-        ================================================= */}
+{/* ORDERS */}
 
         <div className="row g-4">
 
@@ -618,9 +582,7 @@ function Orders() {
 
               <div className="card border-0 shadow-sm rounded-4">
 
-                {/* =================================================
-                    ORDER HEADER
-                ================================================= */}
+{/* ORDER HEADER */}
 
                 <div className="card-header bg-white border-0 p-4">
 
@@ -707,17 +669,13 @@ function Orders() {
 
                 </div>
 
-                {/* =================================================
-                    ORDER BODY
-                ================================================= */}
+                {/* ORDER BODY */}
 
                 <div className="card-body p-4 border-top">
 
                   <div className="row g-4">
 
-                    {/* =================================================
-                        PRODUCTS
-                    ================================================= */}
+                    {/*  PRODUCTS */}
 
                     <div className="col-lg-7">
 
@@ -823,9 +781,8 @@ function Orders() {
 
                     </div>
 
-                    {/* =================================================
-                        CUSTOMER DETAILS
-                    ================================================= */}
+                        {/* CUSTOMER DETAILS */}
+
 
                     <div className="col-lg-5">
 
@@ -912,9 +869,7 @@ function Orders() {
 
                   <hr className="my-4" />
 
-                  {/* =================================================
-                      ORDER FOOTER
-                  ================================================= */}
+                  {/* ORDER FOOTER */}
 
                   <div className="row align-items-center g-3">
 
@@ -1002,9 +957,7 @@ function Orders() {
 
       </div>
 
-      {/* =====================================================
-          ORDER DETAILS MODAL
-      ===================================================== */}
+          {/* ORDER DETAILS MODAL */}
 
       {selectedOrder && (
 

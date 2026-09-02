@@ -14,11 +14,7 @@ import {
   FaHeadset,
   FaWrench,
   FaPalette,
-  FaCheck,
-  FaInstagram,
-  FaFacebookF,
-  FaYoutube,
-} from "react-icons/fa6";
+  FaCheck } from "react-icons/fa6";
 
 import { FaShoppingCart } from "react-icons/fa";
 
@@ -131,9 +127,8 @@ const Home = () => {
   return (
     <div>
 
-      {/* ================================================= */}
       {/* HERO */}
-      {/* ================================================= */}
+     
 
       <section
         className="min-vh-100 d-flex align-items-center text-white mx-3"
@@ -142,8 +137,7 @@ const Home = () => {
             "linear-gradient(90deg, rgba(0,0,0,.95), rgba(0,0,0,.65), rgba(0,0,0,.2)), url('https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=2000&q=90')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-        }}
-      >
+        }} >
 
         <div className="container ">
 
@@ -239,9 +233,7 @@ const Home = () => {
       </section>
 
 
-      {/* ================================================= */}
       {/* FEATURES */}
-      {/* ================================================= */}
 
       <section className="border-bottom bg-white py-4">
 
@@ -347,9 +339,7 @@ const Home = () => {
       </section>
 
 
-      {/* ================================================= */}
       {/* CATEGORIES */}
-      {/* ================================================= */}
 
       <section className="py-5 bg-light">
 
@@ -433,9 +423,7 @@ const Home = () => {
       </section>
 
 
-      {/* ================================================= */}
       {/* PRODUCTS */}
-      {/* ================================================= */}
 
       <section className="py-5">
 
@@ -577,9 +565,7 @@ const Home = () => {
       </section>
 
 
-      {/* ================================================= */}
       {/* PROMOTION */}
-      {/* ================================================= */}
 
       <section className="py-5">
 
@@ -638,9 +624,7 @@ const Home = () => {
       </section>
 
 
-      {/* ================================================= */}
       {/* SERVICES */}
-      {/* ================================================= */}
 
       <section className="py-5 bg-dark text-white">
 
@@ -699,9 +683,7 @@ const Home = () => {
       </section>
 
 
-      {/* ================================================= */}
       {/* ABOUT */}
-      {/* ================================================= */}
 
       <section className="py-5">
 
@@ -790,9 +772,7 @@ const Home = () => {
       </section>
 
 
-      {/* ================================================= */}
       {/* BRANDS */}
-      {/* ================================================= */}
 
       <section className="py-5 bg-light border-top border-bottom">
 
@@ -834,9 +814,7 @@ const Home = () => {
       </section>
 
 
-      {/* ================================================= */}
       {/* STATS */}
-      {/* ================================================= */}
 
       <section className="py-5">
 
@@ -922,9 +900,7 @@ const Home = () => {
       </section>
 
 
-      {/* ================================================= */}
       {/* CTA */}
-      {/* ================================================= */}
 
       <section className="py-5">
 
