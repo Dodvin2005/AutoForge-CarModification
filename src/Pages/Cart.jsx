@@ -14,16 +14,12 @@ import { getAllCartAPI } from "../Services/Api";
 function Cart() {
   const navigate = useNavigate();
 
-  // =====================================================
   // STATES
-  // =====================================================
 
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // =====================================================
   // GET CART ITEMS
-  // =====================================================
 
   const getCartItems = async () => {
     try {
@@ -46,9 +42,7 @@ function Cart() {
     getCartItems();
   }, []);
 
-  // =====================================================
   // INCREASE QUANTITY
-  // =====================================================
 
   const increaseQuantity = (id) => {
     setCartItems((items) =>
@@ -63,9 +57,7 @@ function Cart() {
     );
   };
 
-  // =====================================================
   // DECREASE QUANTITY
-  // =====================================================
 
   const decreaseQuantity = (id) => {
     setCartItems((items) =>
@@ -80,9 +72,7 @@ function Cart() {
     );
   };
 
-  // =====================================================
   // REMOVE ITEM
-  // =====================================================
 
   const removeItem = (id) => {
     const confirmRemove = window.confirm(
@@ -96,9 +86,7 @@ function Cart() {
     );
   };
 
-  // =====================================================
   // CLEAR CART
-  // =====================================================
 
   const clearCart = () => {
     const confirmClear = window.confirm(
@@ -110,9 +98,7 @@ function Cart() {
     setCartItems([]);
   };
 
-  // =====================================================
   // PRICE CALCULATIONS
-  // =====================================================
 
   const subtotal = cartItems.reduce(
     (total, item) =>
@@ -127,9 +113,7 @@ function Cart() {
 
   const total = subtotal + delivery;
 
-  // =====================================================
   // PROCEED TO CHECKOUT
-  // =====================================================
 
   const handleProceedToCheckout = () => {
     if (cartItems.length === 0) {
@@ -140,9 +124,7 @@ function Cart() {
     navigate("/checkouts");
   };
 
-  // =====================================================
   // LOADING
-  // =====================================================
 
   if (loading) {
     return (
@@ -165,9 +147,7 @@ function Cart() {
     );
   }
 
-  // =====================================================
   // EMPTY CART
-  // =====================================================
 
   if (cartItems.length === 0) {
     return (
@@ -179,12 +159,10 @@ function Cart() {
               style={{
                 width: "110px",
                 height: "110px",
-              }}
-            >
+              }} >
               <FaShoppingCart
                 size={45}
-                className="text-muted"
-              />
+                className="text-muted" />
             </div>
 
             <h3 className="fw-bold">
@@ -198,8 +176,7 @@ function Cart() {
 
             <Link
               to="/products"
-              className="btn btn-primary px-4 py-2 rounded-3"
-            >
+              className="btn btn-primary px-4 py-2 rounded-3" >
               Continue Shopping
             </Link>
           </div>
@@ -208,17 +185,13 @@ function Cart() {
     );
   }
 
-  // =====================================================
   // CART PAGE
-  // =====================================================
 
   return (
     <div className="bg-light min-vh-100 py-4 py-md-5">
       <div className="container">
 
-        {/* =================================================
-            HEADER
-        ================================================= */}
+        {/*  HEADER */}
 
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
 
@@ -245,12 +218,9 @@ function Cart() {
             <button
               type="button"
               className="btn btn-sm btn-outline-danger rounded-3"
-              onClick={clearCart}
-            >
-              <FaTrash
-                size={11}
-                className="me-1"
-              />
+              onClick={clearCart} >
+
+              <FaTrash size={11} className="me-1" />
               Clear Cart
             </button>
 
@@ -258,15 +228,11 @@ function Cart() {
 
         </div>
 
-        {/* =================================================
-            MAIN ROW
-        ================================================= */}
+        {/*  MAIN ROW */}
 
         <div className="row g-4">
 
-          {/* =================================================
-              LEFT - CART ITEMS
-          ================================================= */}
+          {/*  LEFT - CART ITEMS */}
 
           <div className="col-lg-8">
 
@@ -306,20 +272,11 @@ function Cart() {
                     itemPrice * quantity;
 
                   return (
-                    <div
-                      key={item.id}
-                      className={`p-4 ${
-                        index !== 0
-                          ? "border-top"
-                          : ""
-                      }`}
-                    >
+                    <div key={item.id} className={`p-4 ${ index !== 0 ? "border-top" : "" }`} >
 
                       <div className="row align-items-center g-3">
 
-                        {/* =================================================
-                            PRODUCT IMAGE
-                        ================================================= */}
+                        {/* PRODUCT IMAGE */}
 
                         <div className="col-4 col-md-2">
 
@@ -343,9 +300,7 @@ function Cart() {
 
                         </div>
 
-                        {/* =================================================
-                            PRODUCT DETAILS
-                        ================================================= */}
+                        {/* PRODUCT DETAILS */}
 
                         <div className="col-8 col-md-4">
 
@@ -375,9 +330,7 @@ function Cart() {
 
                         </div>
 
-                        {/* =================================================
-                            QUANTITY
-                        ================================================= */}
+                        {/* QUANTITY */}
 
                         <div className="col-7 col-md-3">
 
@@ -436,9 +389,7 @@ function Cart() {
 
                         </div>
 
-                        {/* =================================================
-                            TOTAL + REMOVE
-                        ================================================= */}
+                        {/*  TOTAL + REMOVE */}
 
                         <div className="col-5 col-md-3 text-md-end">
 
@@ -479,16 +430,14 @@ function Cart() {
 
             </div>
 
-            {/* =================================================
-                CONTINUE SHOPPING
-            ================================================= */}
+            {/*CONTINUE SHOPPING */}
 
             <div className="mt-4">
 
               <Link
                 to="/products"
-                className="btn btn-outline-dark rounded-3 px-4"
-              >
+                className="btn btn-outline-dark rounded-3 px-4" >
+
                 <FaArrowLeft className="me-2" />
                 Continue Shopping
               </Link>
@@ -497,9 +446,7 @@ function Cart() {
 
           </div>
 
-          {/* =================================================
-              RIGHT - ORDER SUMMARY
-          ================================================= */}
+          {/* RIGHT - ORDER SUMMARY */}
 
           <div className="col-lg-4">
 
@@ -605,9 +552,7 @@ function Cart() {
 
                 </div>
 
-                {/* =================================================
-                    PROCEED TO CHECKOUT
-                ================================================= */}
+                {/* proceed to checkout */}
 
                 <button
                   type="button"
@@ -617,9 +562,7 @@ function Cart() {
                   Proceed to Checkout
                 </button>
 
-                {/* =================================================
-                    BENEFITS
-                ================================================= */}
+                {/* benefits */}
 
                 <div className="mt-4">
 

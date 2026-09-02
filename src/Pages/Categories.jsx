@@ -11,17 +11,13 @@ import {
 import { getAllCategoriesAPI } from "../Services/Api";
 
 const Categories = () => {
-  // =====================================================
-  // STATES
-  // =====================================================
+ 
 
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // =====================================================
   // FETCH CATEGORIES
-  // =====================================================
 
   const fetchCategories = async () => {
     try {
@@ -42,17 +38,13 @@ const Categories = () => {
     }
   };
 
-  // =====================================================
-  // USE EFFECT
-  // =====================================================
+
 
   useEffect(() => {
     fetchCategories();
   }, []);
 
-  // =====================================================
   // ICON FUNCTION
-  // =====================================================
 
   const getCategoryIcon = (name) => {
     const categoryName = name?.toLowerCase() || "";
@@ -95,9 +87,7 @@ const Categories = () => {
     return <FaTools />;
   };
 
-  // =====================================================
   // LOADING
-  // =====================================================
 
   if (loading) {
     return (
@@ -119,9 +109,7 @@ const Categories = () => {
     );
   }
 
-  // =====================================================
   // ERROR
-  // =====================================================
 
   if (error) {
     return (
@@ -142,9 +130,7 @@ const Categories = () => {
     );
   }
 
-  // =====================================================
   // UI
-  // =====================================================
 
   return (
     <div className="container py-5">
